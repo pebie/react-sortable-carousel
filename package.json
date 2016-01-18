@@ -1,0 +1,46 @@
+{
+  "name": "pebie-carousel",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./client/module.js",
+  "style": "./client/style.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js carousel",
+    "build": "babel-node index.js carousel release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:pebie/react-sortable-carousel.git"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.2",
+    "babel-loader": "^5.3.2",
+    "clean-webpack-plugin": "^0.1.4",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "html-webpack-plugin": "^1.6.2",
+    "open": "0.0.5",
+    "optimist": "^0.6.1",
+    "path": "^0.12.7",
+    "react": "^0.13.3",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1",
+    "css-loader": "^0.23.0",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "normalize.css": "^3.0.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pebie/pebie-webpack/issues"
+  },
+  "homepage": "https://github.com/pebie/pebie-webpack#readme",
+  "dependencies": {
+    "classnames": "^2.2.3",
+    "deep-equal": "^1.0.1",
+    "react-dnd": "~1.1.8",
+    "react-measure": "0.1.3"
+  }
+}

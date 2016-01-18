@@ -1,0 +1,28 @@
+/**
+ * Deep getter into a map
+ */
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
+}
+
+/**
+ * Item width depending on the items length
+ */
+@mixin item-width($itemNbr) {
+  width: percentage(1 / $itemNbr);
+}
+
+/**
+ * Aspect ratio with proportional width and height
+ */
+@mixin aspect-ratio($ratio: 1 1) {
+  @if length($ratio) < 2 or length($ratio) > 2 {
+    @warn "$ratio must be a list with two values.";
+  }
+  width: 100%;
+  padding-bottom: percentage(nth($ratio, 2) / nth($ratio, 1));
+}

@@ -1,0 +1,170 @@
+@charset 'utf-8';
+.dedcarousel {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  font-size: 0;
+
+  &:before {
+    content: "1";
+  }
+
+  &__track {
+    overflow-x: visible;
+  }
+
+  &__content {
+    white-space: nowrap;
+    .is-animated & {
+      transition: transform .7s ease;
+    }
+  }
+
+  &__wrapper{
+    display: inline;
+    .dustbin{
+      display: inline-block;
+      margin: 10px 0 0 0;
+      width: 10px;
+      opacity: 0;
+      &--active{
+        background-color: rgba(222,222,222,0.3);
+        border: 1px dashed lightgrey;
+        width: 250px;
+        opacity: 1;
+      }
+      transition: all 0.3s;
+    }
+  }
+
+  &__item {
+    display: block;
+    cursor: default;
+    font-size: 16px;
+    // box-sizing: border-box;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    position: relative;
+    white-space: normal;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  &__media {
+    display: block;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    // Default ratio
+    @include aspect-ratio(960 257);
+  }
+
+  &__button {
+    font-size: 55px;
+    -webkit-appearance: none;
+    border: 0px;
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 80px;
+    height: 110px;
+    text-align: center;
+    cursor: pointer;
+    &--left {
+      left: 0;
+      &:after {
+        content: "<";
+      }
+    }
+    &--right {
+      right: 0;
+      &:after {
+        content: ">";
+      }
+    }
+  }
+}
+
+/**
+ * Items sizing
+ */
+@each $ratio in map-keys(map-get($carousel, ratios)) {
+  .dedcarousel--ratio#{$ratio} {
+
+    &:before {
+      content: "#{map-deep-get($carousel, ratios, $ratio, wide, numberItem)}";
+    }
+
+    .dedcarousel__media {
+      @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, wide, aspectRatio));
+    }
+
+    // Set the items number by page
+    @media (max-width: map-deep-get($carousel, ratios, $ratio, desktop, breakpoint)) {
+      &:before {
+        content: "#{map-deep-get($carousel, ratios, $ratio, desktop, numberItem)}";
+      }
+      .dedcarousel__media {
+        @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, desktop, aspectRatio));
+      }
+    }
+    @media (max-width: map-deep-get($carousel, ratios, $ratio, laptop, breakpoint)) {
+      &:before {
+        content: "#{map-deep-get($carousel, ratios, $ratio, laptop, numberItem)}";
+      }
+      .dedcarousel__media {
+        @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, laptop, aspectRatio));
+      }
+    }
+    @media (max-width: map-deep-get($carousel, ratios, $ratio, tablet, breakpoint)) {
+      &:before {
+        content: "#{map-deep-get($carousel, ratios, $ratio, tablet, numberItem)}";
+      }
+      .dedcarousel__media {
+        @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, tablet, aspectRatio));
+      }
+    }
+    @media (max-width: map-deep-get($carousel, ratios, $ratio, tabletPortrait, breakpoint)) {
+      &:before {
+        content: "#{map-deep-get($carousel, ratios, $ratio, tabletPortrait, numberItem)}";
+      }
+      .dedcarousel__media {
+        @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, tabletPortrait, aspectRatio));
+      }
+    }
+    @media (max-width: map-deep-get($carousel, ratios, $ratio, mobile, breakpoint)) {
+      &:before {
+        content: "#{map-deep-get($carousel, ratios, $ratio, mobile, numberItem)}";
+      }
+      .dedcarousel__media {
+        @include aspect-ratio(map-deep-get($carousel, ratios, $ratio, mobile, aspectRatio));
+      }
+    }
+
+    // Define the width for each item
+    .dedcarousel__item {
+      @include item-width(map-deep-get($carousel, ratios, $ratio, wide, numberItem));
+      @media (max-width: map-deep-get($carousel, ratios, $ratio, desktop, breakpoint)) {
+        @include item-width(map-deep-get($carousel, ratios, $ratio, desktop, numberItem));
+      }
+      @media (max-width: map-deep-get($carousel, ratios, $ratio, laptop, breakpoint)) {
+        @include item-width(map-deep-get($carousel, ratios, $ratio, laptop, numberItem));
+      }
+      @media (max-width: map-deep-get($carousel, ratios, $ratio, tablet, breakpoint)) {
+        @include item-width(map-deep-get($carousel, ratios, $ratio, tablet, numberItem));
+      }
+      @media (max-width: map-deep-get($carousel, ratios, $ratio, tabletPortrait, breakpoint)) {
+        @include item-width(map-deep-get($carousel, ratios, $ratio, tabletPortrait, numberItem));
+      }
+      @media (max-width: map-deep-get($carousel, ratios, $ratio, mobile, breakpoint)) {
+        @include item-width(map-deep-get($carousel, ratios, $ratio, mobile, numberItem));
+      }
+    }
+  }
+}

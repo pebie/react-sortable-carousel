@@ -1,0 +1,66 @@
+$carousel: (
+  ratios:(
+    "16_9":(
+      mobile:(
+        breakpoint: 350px,
+        numberItem: 1,
+        aspectRatio: 16 9
+      ),
+      tabletPortrait:(
+        breakpoint: 800px,
+        numberItem: 2,
+        aspectRatio: 16 9
+      ),
+      tablet:(
+        breakpoint: 1285px,
+        numberItem: 3,
+        aspectRatio: 16 9
+      ),
+      laptop:(
+        breakpoint: 1600px,
+        numberItem: 4,
+        aspectRatio: 16 9
+      ),
+      desktop:(
+        breakpoint: 1600px,
+        numberItem: 4,
+        aspectRatio: 16 9
+      ),
+      wide:(
+        numberItem: 5,
+        aspectRatio: 16 9
+      )
+    ),
+    "3_4":(
+      mobile:(
+        breakpoint: 350px,
+        numberItem: 3,
+        aspectRatio: 3 4
+      ),
+      tabletPortrait:(
+        breakpoint: 800px,
+        numberItem: 4,
+        aspectRatio: 3 4
+      ),
+      tablet:(
+        breakpoint: 1190px,
+        numberItem: 5,
+        aspectRatio: 3 4
+      ),
+      laptop:(
+        breakpoint: 1285px,
+        numberItem: 6,
+        aspectRatio: 3 4
+      ),
+      desktop:(
+        breakpoint: 1681px,
+        numberItem: 7,
+        aspectRatio: 3 4
+      ),
+      wide:(
+        numberItem: 8,
+        aspectRatio: 3 4
+      )
+    )
+  )
+) !default;

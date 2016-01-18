@@ -1,0 +1,199 @@
+/**
+ * Deep getter into a map
+ */
+/**
+ * Item width depending on the items length
+ */
+/**
+ * Aspect ratio with proportional width and height
+ */
+.dedcarousel {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  font-size: 0; }
+  .dedcarousel:before {
+    content: "1"; }
+  .dedcarousel__track {
+    overflow-x: visible; }
+  .dedcarousel__content {
+    white-space: nowrap; }
+    .is-animated .dedcarousel__content {
+      transition: transform .7s ease; }
+  .dedcarousel__wrapper {
+    display: inline; }
+    .dedcarousel__wrapper .dustbin {
+      display: inline-block;
+      margin: 10px 0 0 0;
+      width: 10px;
+      opacity: 0;
+      transition: all 0.3s; }
+      .dedcarousel__wrapper .dustbin--active {
+        background-color: rgba(222, 222, 222, 0.3);
+        border: 1px dashed lightgrey;
+        width: 250px;
+        opacity: 1; }
+  .dedcarousel__item {
+    display: block;
+    cursor: default;
+    font-size: 16px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: relative;
+    white-space: normal;
+    vertical-align: top;
+    width: 100%; }
+  .dedcarousel__media {
+    display: block;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    width: 100%;
+    padding-bottom: 26.77083%; }
+  .dedcarousel__button {
+    font-size: 55px;
+    -webkit-appearance: none;
+    border: 0px;
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 80px;
+    height: 110px;
+    text-align: center;
+    cursor: pointer; }
+    .dedcarousel__button--left {
+      left: 0; }
+      .dedcarousel__button--left:after {
+        content: "<"; }
+    .dedcarousel__button--right {
+      right: 0; }
+      .dedcarousel__button--right:after {
+        content: ">"; }
+
+/**
+ * Items sizing
+ */
+.dedcarousel--ratio16_9:before {
+  content: "5"; }
+
+.dedcarousel--ratio16_9 .dedcarousel__media {
+  width: 100%;
+  padding-bottom: 56.25%; }
+
+@media (max-width: 1600px) {
+  .dedcarousel--ratio16_9:before {
+    content: "4"; }
+  .dedcarousel--ratio16_9 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 56.25%; } }
+
+@media (max-width: 1600px) {
+  .dedcarousel--ratio16_9:before {
+    content: "4"; }
+  .dedcarousel--ratio16_9 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 56.25%; } }
+
+@media (max-width: 1285px) {
+  .dedcarousel--ratio16_9:before {
+    content: "3"; }
+  .dedcarousel--ratio16_9 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 56.25%; } }
+
+@media (max-width: 800px) {
+  .dedcarousel--ratio16_9:before {
+    content: "2"; }
+  .dedcarousel--ratio16_9 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 56.25%; } }
+
+@media (max-width: 350px) {
+  .dedcarousel--ratio16_9:before {
+    content: "1"; }
+  .dedcarousel--ratio16_9 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 56.25%; } }
+
+.dedcarousel--ratio16_9 .dedcarousel__item {
+  width: 20%; }
+  @media (max-width: 1600px) {
+    .dedcarousel--ratio16_9 .dedcarousel__item {
+      width: 25%; } }
+  @media (max-width: 1600px) {
+    .dedcarousel--ratio16_9 .dedcarousel__item {
+      width: 25%; } }
+  @media (max-width: 1285px) {
+    .dedcarousel--ratio16_9 .dedcarousel__item {
+      width: 33.33333%; } }
+  @media (max-width: 800px) {
+    .dedcarousel--ratio16_9 .dedcarousel__item {
+      width: 50%; } }
+  @media (max-width: 350px) {
+    .dedcarousel--ratio16_9 .dedcarousel__item {
+      width: 100%; } }
+
+.dedcarousel--ratio3_4:before {
+  content: "8"; }
+
+.dedcarousel--ratio3_4 .dedcarousel__media {
+  width: 100%;
+  padding-bottom: 133.33333%; }
+
+@media (max-width: 1681px) {
+  .dedcarousel--ratio3_4:before {
+    content: "7"; }
+  .dedcarousel--ratio3_4 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 133.33333%; } }
+
+@media (max-width: 1285px) {
+  .dedcarousel--ratio3_4:before {
+    content: "6"; }
+  .dedcarousel--ratio3_4 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 133.33333%; } }
+
+@media (max-width: 1190px) {
+  .dedcarousel--ratio3_4:before {
+    content: "5"; }
+  .dedcarousel--ratio3_4 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 133.33333%; } }
+
+@media (max-width: 800px) {
+  .dedcarousel--ratio3_4:before {
+    content: "4"; }
+  .dedcarousel--ratio3_4 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 133.33333%; } }
+
+@media (max-width: 350px) {
+  .dedcarousel--ratio3_4:before {
+    content: "3"; }
+  .dedcarousel--ratio3_4 .dedcarousel__media {
+    width: 100%;
+    padding-bottom: 133.33333%; } }
+
+.dedcarousel--ratio3_4 .dedcarousel__item {
+  width: 12.5%; }
+  @media (max-width: 1681px) {
+    .dedcarousel--ratio3_4 .dedcarousel__item {
+      width: 14.28571%; } }
+  @media (max-width: 1285px) {
+    .dedcarousel--ratio3_4 .dedcarousel__item {
+      width: 16.66667%; } }
+  @media (max-width: 1190px) {
+    .dedcarousel--ratio3_4 .dedcarousel__item {
+      width: 20%; } }
+  @media (max-width: 800px) {
+    .dedcarousel--ratio3_4 .dedcarousel__item {
+      width: 25%; } }
+  @media (max-width: 350px) {
+    .dedcarousel--ratio3_4 .dedcarousel__item {
+      width: 33.33333%; } }
